@@ -23,4 +23,3 @@ function stringEndsWith2(str, ending) {
 
 console.log(stringEndsWith2("pato", "to"))
 console.log(stringEndsWith2("sensei", "ai"))
-
