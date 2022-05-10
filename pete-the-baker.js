@@ -55,6 +55,8 @@ function cakes(recipe, available) {
 
 console.log(cakes(chocolateCake, availableChocolateCake));
 console.log(cakes(RedVelvet, availableRV));
+console.log(cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
+
 
 // Another approach: 
 
@@ -75,3 +77,4 @@ const cakes2 = (recipe, available) => {
 
 console.log(cakes2(chocolateCake, availableChocolateCake));
 console.log(cakes2(RedVelvet, availableRV));
+console.log(cakes2({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}));
