@@ -65,7 +65,7 @@ const solution2 = (roman) => {
     return numericValue;
 }
 
-console.log("Test Cases Solution 2:  ")
+console.log("Test Cases Solution 2:")
 console.log(solution2("MMMCLVIII"))
 console.log(solution2("XXX"))
 console.log(solution2("XXIII"))
@@ -90,7 +90,7 @@ function solution3(roman){
     }
     return sum;
 }
-console.log("Test Cases Solution 3:  ")
+console.log("Test Cases Solution 3:")
 console.log(solution3("MMMCLVIII"))
 console.log(solution3("XXX"))
 console.log(solution3("XXIII"))
