@@ -58,7 +58,6 @@ const firstNonRepeated = (nums) => {
 
 console.log(firstNonRepeated(nums1))
 console.log(firstNonRepeated(nums2))
-console.log(firstNonRepeated(nums3))
 console.log(firstNonRepeated(nums4))
 
 // Alternative Solution: 
