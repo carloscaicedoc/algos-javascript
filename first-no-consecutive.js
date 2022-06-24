@@ -38,6 +38,7 @@ const firstNonConsecutive = (nums) => {
 // Test Cases: 
 console.log(firstNonConsecutive(nums2))
 console.log(firstNonConsecutive(nums3))
+console.log(firstNonConsecutive(nums4))
 
 // Solution 2 - Similar Approach
 function firstNonConsecutive2(nums) {
