@@ -73,7 +73,7 @@ function firstNonRepeated2(nums = []) {
         }
     }
 
-    // Loop to check first unique element. 
+    // Loop to search for first unique element. 
     for (const num of nums) {
         if (freq[num] === 1) {
             return num;
