@@ -86,4 +86,3 @@ var findDifference3 = function(nums1, nums2) {
 };
 
 console.log(findDifference3(test1A, test1B));
-console.log(findDifference3(test2A, test2B));
