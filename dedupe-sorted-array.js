@@ -37,9 +37,8 @@ function dedupeSorted(nums = []) {
             mapFreq[num] = 1;
             deduped.push(num)
         }
-
     }
-
+    
     return deduped;
 }
 
