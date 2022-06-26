@@ -84,5 +84,3 @@ var findDifference3 = function(nums1, nums2) {
   
     return [[...new Set(numsArr1)], [...new Set(numsArr2)]];
 };
-
-console.log(findDifference3(test1A, test1B));
