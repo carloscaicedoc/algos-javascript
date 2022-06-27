@@ -21,17 +21,16 @@ const lower2 = -1;
 const upper2 = 20;
 const expected2 = ["-1=>0", "6=>8", "12", "14=>15", "17=>20"];
 
-// Solution - Check consecutives and non-consecutives + edge cases.
+// Solution - Check consecutives and non-consecutives + edge cases. 
 let missingRanges = (nums, lower, upper) => {
     let ranges = [];
     // Edge Case: first element is not equal lower.
     if (nums[0] !== lower) {
         const firstNum = nums[0] - 1;
-        const startRange = lower;
-        if (firstNum === startRange) {
-            ranges.push(firstNum.toString());
+        if (firstNum === lower) {
+            ranges.push(lower.toString());
         } else {
-            let firstRangeStr = startRange.toString() + '=>' + firstNum.toString()
+            let firstRangeStr = lower.toString() + '=>' + firstNum.toString()
             ranges.push(firstRangeStr);
         }
     }
@@ -54,11 +53,10 @@ let missingRanges = (nums, lower, upper) => {
     // Edge Case: last element is not equal upper.
     if (nums[nums.length - 1] !== upper) {
         const lastNum = nums[nums.length - 1] + 1;
-        const endRange = upper;
-        if (lastNum === endRange) {
-            ranges.push(lastNum.toString());
+        if (lastNum === upper) {
+            ranges.push(upper.toString());
         } else {
-            let lastRangeStr = lastNum.toString() + '=>' + endRange.toString()
+            let lastRangeStr = lastNum.toString() + '=>' + upper.toString()
             ranges.push(lastRangeStr);
         }
     }
