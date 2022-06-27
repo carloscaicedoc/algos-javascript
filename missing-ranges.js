@@ -21,16 +21,25 @@ const lower2 = -1;
 const upper2 = 20;
 const expected2 = ["-1=>0", "6=>8", "12", "14=>15", "17=>20"];
 
-// Solution - Check consecutives and non-consecutives + edge cases. 
+// Solution - Consecutives
 let missingRanges = (nums, lower, upper) => {
     let ranges = [];
+    // Edge Case: Empty arrray
+    if (nums.length === 0) {
+        if (lower === upper) {
+            ranges.push(lower.toString());
+        } else {
+            ranges.push(lower.toString() + '->' + upper.toString());
+        }
+        return ranges;
+    }
     // Edge Case: first element is not equal lower.
     if (nums[0] !== lower) {
         const firstNum = nums[0] - 1;
         if (firstNum === lower) {
             ranges.push(lower.toString());
         } else {
-            let firstRangeStr = lower.toString() + '=>' + firstNum.toString()
+            let firstRangeStr = lower.toString() + '->' + firstNum.toString()
             ranges.push(firstRangeStr);
         }
     }
@@ -63,5 +72,31 @@ let missingRanges = (nums, lower, upper) => {
     return ranges;
 }
 
-console.log(missingRanges(nums1, lower1, upper1))
-console.log(missingRanges(nums2, lower2, upper2))
+// console.log(missingRanges(nums1, lower1, upper1))
+// console.log(missingRanges(nums2, lower2, upper2))
+
+// Alternative Solution: 
+function findMissingRanges(nums, lower, upper) {
+    let res = [];
+
+    nums = [lower -1, ...nums, upper + 1];
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) {
+            continue;
+        }
+        if (nums[i] === nums[i - 1] + 2) {
+            res.push('' + nums[i - 1] + 1);
+        } else {
+            res.push([nums[i - 1] + 1, nums[i] - 1].join('->'))
+        }
+    }
+    return res;
+}
+
+const nums3 = [2, 10, 18, 22];
+const lower3 = 1;
+const upper3 = 26;
+const expected3 = ["1", "3->9", "11->17", "19->21", "23->26"];
+
+console.log(findMissingRanges(nums3, lower3, upper3))
