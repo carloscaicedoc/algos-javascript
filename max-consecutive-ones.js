@@ -14,8 +14,8 @@ const expected3 = 4;
 
 // Solution
 const findMaxConsecutiveOnes = (nums) => {
-    let maxConsOne = 0;
-    let currConsOne = 0;
+    let max = 0;
+    let count = 0;
 
     if (nums.length === 1 && nums[0] === 1) {
         return 1;
@@ -23,16 +23,16 @@ const findMaxConsecutiveOnes = (nums) => {
 
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] === 1 && nums[i - 1] !== 1 || i === 0 && nums[i] == 1) {
-            currConsOne = 1;
-            maxConsOne = Math.max(maxConsOne, currConsOne)
+            count = 1;
+            max = Math.max(max, count)
         } else if (nums[i] === 1 && nums[i] === nums[i - 1]) {
-            currConsOne += 1;
-            maxConsOne = Math.max(maxConsOne, currConsOne)
+            count += 1;
+            max = Math.max(max, count)
         } else {
-            currConsOne = 0;
+            count = 0;
         }
     }
-    return maxConsOne;
+    return max;
 }
 
 
