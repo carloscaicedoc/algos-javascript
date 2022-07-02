@@ -12,7 +12,7 @@ const expected2 = 2;
 const nums3 = [1, 1, 1, 0, 0, 1, 1, 1, 1];
 const expected3 = 4;
 
-
+// Solution
 const findMaxConsecutiveOnes = (nums) => {
     let maxConsOne = 0;
     let currConsOne = 0;
@@ -35,6 +35,7 @@ const findMaxConsecutiveOnes = (nums) => {
     return maxConsOne;
 }
 
+// Test Cases:
 console.log(findMaxConsecutiveOnes(nums1))
 console.log(findMaxConsecutiveOnes(nums2))
 console.log(findMaxConsecutiveOnes(nums3))
