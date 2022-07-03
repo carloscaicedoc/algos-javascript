@@ -6,23 +6,20 @@ of them contain an even number of digits. (From Leetcode. Array chapter)
 
 const nums1 = [12,345,2,6,7896];
 const expected1 = 2;
-// 12 and 7896 contain even number of digits.
 
 const nums2 = [555,901,482,1771];
 const expected2 = 1;
-// Only 1771 contains even number of digits
 
 // Solution: Convert number into string.
 let findNumbers = function(nums) {
     let evenCounter = 0;
 
-    for (let i = 0; i < nums.length; i++) {
-        let numStr = nums[i].toString();
-
-        if (numStr.length % 2 === 0) {
-            evenCounter += 1;
+    for (const num of nums) {
+        if (num.toString().length % 2 === 0) {
+            evenCounter++;
         }
     }
+
     return evenCounter;
 }
 
@@ -33,19 +30,19 @@ console.log(findNumbers(nums2))
 const findNumbers2 = (nums) => {
     let evenCounter = 0;
     
-    for (let i = 0; i < nums.length; i++) {
-        let n = nums[i];
-        let count = 0
+    for (const num of nums) {
+        let count = 0;
+        let n = num;
+
         while (n !== 0) {
-            console.log(n)
             n = Math.floor(n / 10);
-            console.log(n)
             count++;
         }
         if (count % 2 === 0) {
-            evenCounter += 1;
+            evenCounter += 1
         }
     }
+
     return evenCounter;
 }
 
